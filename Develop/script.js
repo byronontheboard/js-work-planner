@@ -5,6 +5,7 @@ $(function () {
   // Initializing variables for the functions that I will create.
     // This clock is where I will fill textContent from currentTime.
   var clock = document.getElementById('clock')
+  var loadingDots = clock.querySelector('span');
   
   // Function to update the currentTime for clock.
   function updateClock() {
