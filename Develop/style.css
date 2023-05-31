@@ -57,3 +57,72 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+/* Added classes */
+  /* POSITIONING */
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* FONT/TEXT */
+.xxl-text {
+  font-size: xx-large;
+}
+
+.title-text {
+  font-size:x-large;
+  margin-top: 48px;
+}
+
+.heading-text {
+  font-size: larger;
+}
+
+.subheading-text {
+  font-size: medium;
+}
+
+.body-text {
+  font-size: small;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-48px {
+  margin-top: 48px;
+}
+
+.mb-24px {
+  margin-bottom: 24px;
+}
+
+.lh-2 {
+  line-height: 2;
+}

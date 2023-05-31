@@ -2,6 +2,30 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  // Initializing variables for the functions that I will create.
+    // This clock is where I will fill textContent from currentTime.
+  var clock = document.getElementById('clock')
+  
+  // Function to update the currentTime for clock.
+  function updateClock() {
+    
+    // Loading the Day.js library to use as a variable in my functions.
+    var currentTime = dayjs();
+    
+    // Variables for different time parameters.
+    var timeFormat = currentTime.format('HH:mm:ss'); // Format the time
+    var dateFormat = currentTime.format('dddd, MMMM DD, YYYY'); // Format the date
+
+    // This is how the clock's time will be formatted on the application.
+    var displayFormat = "Today is " + dateFormat + ", " + timeFormat;
+
+    // This will update the textContent for the clock element, thus displaying the live time loaded from Day.js.
+    clock.textContent = displayFormat;
+  }
+
+  // Call the updateClock function every second (1000 milliseconds)
+  setInterval(updateClock, 1000);
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener

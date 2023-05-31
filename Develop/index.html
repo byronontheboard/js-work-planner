@@ -22,23 +22,46 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
+    <!-- Library inserted from Day.js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/dayjs.min.js"></script>
+
   </head>
 
   <body>
     <header class="p-5 mb-4">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <h1 class="display-3 text-center">Work Day Scheduler</h1>
+      <p class="lead text-center">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
+      
+      <!-- Live clock for my work schedule(the #clock will be utilized). -->
+      <div id="clock" class="text-center heading-text"></div>
     </header>
+    
     <div id="work-schedule" class="container-fluid px-5">
       <!-- This is where each time for the work schedule will be appended from #work-schedule. -->
-      <!-- <div id="hour-(insertTimeIndex)" class="row time-block past present future">
+      <div id="hour-(insertTimeIndex)" class="row time-block past">
         <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
         <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
         <button class="btn saveBtn col-2 col-md-1" aria-label="save">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
-      </div> -->
+      </div>
+
+      <div id="hour-(insertTimeIndex)" class="row time-block present">
+        <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
+        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div id="hour-(insertTimeIndex)" class="row time-block future">
+        <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
+        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div>
 
       <!-- Use class for "past", "present", and "future" to apply styles to the
         time-block divs accordingly. The javascript will need to do this by
