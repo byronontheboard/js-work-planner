@@ -5,7 +5,6 @@ $(function () {
   // Initializing variables for the functions that I will create.
     // This clock is where I will fill textContent from currentTime.
   var clock = document.getElementById('clock')
-  var loadingDots = clock.querySelector('span');
   
   // Function to update the currentTime for clock.
   function updateClock() {
@@ -26,6 +25,53 @@ $(function () {
 
   // Call the updateClock function every second (1000 milliseconds)
   setInterval(updateClock, 1000);
+
+  function nineToFive() {
+    var workSchedule = $('#work-schedule')
+
+    // This establishes the hour for each time block on the work schedule. 
+    // A block will be appended for each time as long as it is equal to 9(9:00AM) and less than 17(5:00PM).
+    for (var hour = 9; hour <= 17; hour++) {
+      // If the hour is less than 12, the value will be 'AM' for meridiem.
+      // If the hour is more than 12, the value will be 'PM' for meridiem.
+      var meridiem = (hour < 12) ? 'AM' : 'PM';
+      // This will be used to display the hours for each block on the schedule, followed my meridiem to determine whether it is 'AM' or 'PM'.
+      var displayHour = (hour > 12) ? hour - 12 : hour;
+
+      // Variable for the times blocks that will be appended(9:00AM-5:00PM).
+      var timeBlock = 
+      `<div id="hour-(insertTimeIndex)" class="row time-block">
+        <div class="col-2 col-md-1 hour text-center py-3">${displayHour + ':00'}${meridiem}</div>
+        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div>`
+
+    workSchedule.append(timeBlock)
+    }
+  }
+
+  nineToFive();
+
+  // function nineToFive() {
+  //   let meridiemSuffix = ''
+  //   if(timeFormat >= 9 || timeFormat < 12) {
+  //     meridiemSuffix = "AM"
+  //   } else {
+  //     meridiemSuffix = "PM"
+  //   }
+  // }
+
+  // function addMeridiemSuffix(timeFormat) {
+  //   let meridiemSuffix = '';
+  //   if (timeFormat >= '09:00:00' && timeFormat < '12:00:00') {
+  //     meridiemSuffix = " AM";
+  //   } else if (timeFormat >= '12:00:00' && timeFormat < '17:00:00') {
+  //     meridiemSuffix = " PM";
+  //   }
+  //   return timeFormat + meridiemSuffix;
+  // }
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
