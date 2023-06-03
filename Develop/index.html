@@ -24,7 +24,6 @@
     <title>Work Day Scheduler</title>
     <!-- Library inserted from Day.js -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/dayjs.min.js"></script>
-
   </head>
 
   <body>
@@ -38,48 +37,14 @@
       <div id="clock" class="text-center heading-text">Loading...</div>
     </header>
     
-    <div id="work-schedule" class="container-fluid px-5">
+    <div id="work-schedule" class="container-fluid px-5" style="padding-top: 84px; padding-bottom: 84px; border-top: solid black 12px;">
       <!-- This is where each time for the work schedule will be appended from #work-schedule. -->
-      
-      <!-- <div id="hour-(insertTimeIndex)" class="row time-block past">
-        <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
-        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-          <i class="fas fa-save" aria-hidden="true"></i>
-        </button>
-      </div>
-
-      <div id="hour-(insertTimeIndex)" class="row time-block present">
-        <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
-        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-          <i class="fas fa-save" aria-hidden="true"></i>
-        </button>
-      </div>
-
-      <div id="hour-(insertTimeIndex)" class="row time-block future">
-        <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
-        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
-        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-          <i class="fas fa-save" aria-hidden="true"></i>
-        </button>
-      </div> -->
-
-      <!-- Use class for "past", "present", and "future" to apply styles to the
-        time-block divs accordingly. The javascript will need to do this by
-        adding/removing these classes on each div by comparing the hour in the
-        id to the current hour. The html provided below is meant to be an example
-        demonstrating how the css provided can be leveraged to create the
-        desired layout and colors. The html below should be removed or updated
-        in the finished product. Remember to delete this comment once the
-        code is implemented. -->
     </div>  
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
     crossorigin="anonymous"></script>
-
     <script src="script.js"></script>
   </body>
 </html>
